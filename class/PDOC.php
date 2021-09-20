@@ -20,10 +20,39 @@ class PDOC
 		return $this->pdoc;
 	}
 
-	public static function query()
+	//SQL単純実行
+	//@param $sql
+	//@return SQL実行結果
+	public static function query( $sql )
+	{
+		$return = $this->pdoc->query( $sql );
+		return $return;
+	}
+
+	//select
+	//@param $sql
+	//@return SQL実行結果
+	public static function fetchAll( )
 	{
 		
 	}
+
+	//insert
+	//@param $tableName
+	//@param $queries(連想配列 カラム名=>値)
+	public static function insert($tableName, $queries)
+	{
+		foreach ($queries as $key => $value) {
+			
+		}
+	}
+
+	public static function update()
+	{
+
+	}
+
+
 }
 
 ?>
