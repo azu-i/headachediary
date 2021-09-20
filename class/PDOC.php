@@ -30,11 +30,34 @@ class PDOC
 	}
 
 	//select
-	//@param $sql
-	//@return SQL実行結果
-	public static function fetchAll( )
+	//@param $tableName
+	//@param $queries
+	//@return select結果
+	public static function fetchAll( $tableName, $queries )
 	{
-		
+		if( !empty($queries) ){
+			$sql = sprintf("
+				SELECT
+				*
+				FROM
+				%s",
+				$tableName
+			);
+		} else {
+			foreach( $queries as $key => $value ){
+				$sql = sprintf("
+					SELECT
+					*
+					FROM
+					%s
+					WHERE
+					$s = %s",
+					$tableName, $key, $value
+				);
+			}
+		}
+		$retrun = $this->pdoc->query( $sql );
+		return $return;
 	}
 
 	//insert
