@@ -51,7 +51,7 @@ class PDOC
 					FROM
 					%s
 					WHERE
-					$s = %s",
+					%s = %s",
 					$tableName, $key, $value
 				);
 			}
